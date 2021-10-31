@@ -8,15 +8,15 @@ type Position = {
 
 export default function useClock() {
   const dateRef = useRef<Date>(new Date());
+  const idRef = useRef(0);
   const [pos, setPos] = useState(getPos(dateRef.current));
 
   useEffect(() => {
-    let id: number;
     requestAnimationFrame(function rotate() {
       setPos(getPos(new Date()));
-      id = requestAnimationFrame(rotate);
+      idRef.current = requestAnimationFrame(rotate);
     });
-    return () => cancelAnimationFrame(id);
+    return () => cancelAnimationFrame(idRef.current);
   }, []);
 
   return pos;
