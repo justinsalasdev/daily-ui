@@ -1,19 +1,19 @@
 import "../base.sass";
-import "./clock.sass";
+import * as m from "./clock.module.sass";
 import useClock from "./useClock";
 
 export default function Clock() {
   const pos = useClock();
   // console.log(pos);
   return (
-    <div className="container">
-      <div className="clock">
+    <div className={m.container}>
+      <div className={m.clock}>
         {Array(6)
           .fill("")
           .map((_, index) => (
             <div
               key={index}
-              className="mark"
+              className={m.mark}
               style={{ transform: `rotate(${(index + 1) * 30}deg)` }}
             >
               <span></span>
@@ -21,18 +21,18 @@ export default function Clock() {
             </div>
           ))}
       </div>
-      <div className="center">
+      <div className={m.center}>
         <div
           style={{ transform: `translateX(50%) rotate(${pos.hour}deg)` }}
-          className="hand hour"
+          className={`${m.hand} ${m.hour}`}
         ></div>
         <div
           style={{ transform: `translateX(50%)  rotate(${pos.min}deg)` }}
-          className="hand min"
+          className={`${m.hand} ${m.min}`}
         ></div>
         <div
           style={{ transform: `translateX(50%)  rotate(${pos.sec}deg)` }}
-          className="hand sec"
+          className={`${m.hand} ${m.sec}`}
         ></div>
       </div>
     </div>
