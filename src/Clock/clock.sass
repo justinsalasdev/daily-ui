@@ -1,27 +1,58 @@
 
 .container
-    background: url("background.jpeg") center / cover no-repeat
-    height: 60rem
-    width: 80rem
-    display: grid
-    place-items: center
+	background: url("background.jpeg") center / cover no-repeat
+	height: 60rem
+	width: 80rem
+	display: grid
+	place-items: center
 
 .clock
-    width: 32rem
-    padding: 1rem
-    // aspect-ratio: 1/1
-    height: 32rem
-    background-color: rgba(white,0.06)
-    backdrop-filter: blur(2rem)
-    border-radius: 50%
-    border: .2rem solid rgba(white,0.1)
-    box-shadow: 3rem 3rem 3.5rem rgba(black,0.25)
-    display: grid,
-    place-items: center
+	width: 32rem
+	padding: 1rem
+	height: 32rem
+	background-color: rgba(white,0.06)
+	backdrop-filter: blur(2rem)
+	border-radius: 50%
+	border: .2rem solid rgba(white,0.1)
+	box-shadow: 3rem 3rem 3.5rem rgba(black,0.25)
+	display: grid,
+	place-items: center
 
 .mark
-    background-color: rgba(white,0.7)
-    height: .2rem,
-    width: 100%
-    border-radius: 100%
-    position: absolute
+	display: flex
+	justify-content: space-between
+	// background-color: rgba(white,0.7)
+	width: 100%
+	position: absolute
+
+	> span
+		display: block
+		margin-inline: 1rem
+		width: 2rem
+		height: .2rem,
+		border-radius: 50%
+		background-color: rgba(white,0.7)
+
+.center
+	width: 1rem
+	height: 1rem
+	position: absolute
+	border-radius: 50%
+	background-color: rgba(white,0.7)
+	display: grid,
+	place-items: center
+	transform: rotate(-90deg)
+
+.hand
+	position: absolute
+	height: .2rem
+	background-color: rgba(white,0.7)
+	transform-origin: 0 50%
+	transform: translateX(50%)
+
+.hour
+	width: 10rem
+.min
+	width: 12rem
+.sec
+	width: 15rem
