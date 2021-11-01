@@ -1,3 +1,8 @@
+
+$light: -1rem -1rem 1.5rem rgba(white,0.5)
+$dark: 1rem 1rem 1.5rem rgba(70,70,70,0.12)
+$bloater: $light, $dark
+$digger: inset $light, inset $dark
 .container
   width: 60rem
   height: 30rem
@@ -9,14 +14,14 @@
   height: 20rem
   width: 20rem
   appearance: none
-  box-shadow: -1rem -1rem 1.5rem rgba(white,0.5),1rem 1rem 1.5rem rgba(70,70,70,0.12)
+  box-shadow: $bloater
   border-radius: 50%
   border: .8rem solid #ececec
   outline: none
   cursor: pointer
 
 .checked
-  box-shadow: -1rem -1rem 1.5rem rgba(white,0.5),1rem 1rem 1.5rem rgba(70,70,70,0.12),inset -1rem -1rem 1.5rem rgba(white,0.5), inset 1rem 1rem 1.5rem rgba(70,70,70,0.12)
+  box-shadow: $bloater,$digger
 
 .icon
   width: 8rem

@@ -1,0 +1,63 @@
+
+$light: -.7rem -.7rem 1.5rem rgba(white,0.65),
+$dark: .7rem .7rem 1.5rem rgba(70,70,70,0.12),
+$bloater: $light, $dark
+$digger: inset $light, inset $dark
+
+.container
+  background: #ececec
+  width: 60rem
+  height: 30rem
+  display: grid
+  place-items: center
+
+.toggle
+  width: 25rem
+  height: 12rem
+  box-shadow: $bloater
+  border-radius: .5rem
+  display: flex
+  align-items: center
+  position: relative
+
+.btn
+  position: absolute
+  appearance: none
+  height: 8rem
+  width: 16rem
+  box-shadow: $bloater,$digger
+  border-radius: 4rem
+  border: .5rem solid #ececec
+  left: 1.5rem
+  outline: none
+  cursor: pointer
+
+  &::before,
+  &::after
+    content: ""
+    position: absolute
+    margin: auto
+    top: 0
+    bottom: 0
+    transition: 0.3s
+
+  &::before
+    height: 5rem
+    width: 5rem
+    background-color: #ececec
+    box-shadow: $bloater
+    border-radius: 50%
+    left: 1.5rem
+
+  &::after
+    height: 1.5rem
+    width: 1.5rem
+    background: #7a7a7a
+    border-radius: 50%
+    right: -5.5rem
+
+  &:checked::before
+    left: 8.6rem
+
+  &:checked::after
+    background: #55f696
